@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 
         <meta
           name="description"
-          content="Unlock liquidity of NFT with Superfluid and AAVE!"
+          content="Unlocking the liquidity of NFTs with AAVE and Superfluid"
         />
       </Head>
 

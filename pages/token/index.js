@@ -124,7 +124,7 @@ export default function IndexPage() {
     );
     let txn = await erc20Contract.approve(
       process.env.NEXT_PUBLIC_RICKS_CONTRACT,
-      ethers.BigNumber.from((_amount * 10 ** 18).toString())
+      ethers.utils.parseEther(_amount.toString())
     );
     await txn.wait();
     message.success("DAI has been approved!");
@@ -163,7 +163,6 @@ export default function IndexPage() {
         receiver: process.env.NEXT_PUBLIC_RICKS_CONTRACT,
         superToken: _ricksAddress,
       });
-      console.log(createFlowOperation);
 
       let txn = await createFlowOperation.exec(state.sfSigner);
       txn.wait();
@@ -181,7 +180,7 @@ export default function IndexPage() {
     );
     let txn = await erc20Contract.approve(
       process.env.NEXT_PUBLIC_RICKS_CONTRACT,
-      ethers.BigNumber.from((_amount * 10 ** 18).toString())
+      ethers.utils.parseEther(_amount.toString())
     );
     await txn.wait();
     message.success("DAI has been approved");
@@ -193,7 +192,7 @@ export default function IndexPage() {
     );
     txn = await debtTokenContract.approveDelegation(
       process.env.NEXT_PUBLIC_RICKS_CONTRACT,
-      ethers.BigNumber.from((_amount * 10 ** 18).toString())
+      ethers.utils.parseEther(_amount.toString())
     );
     await txn.wait();
     message.success("Credit delegation has been approved");
@@ -236,7 +235,7 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>rickdiculas</title>
+        <title>RICKdiculous Streams</title>
       </Head>
 
       <ApplicationPage>
